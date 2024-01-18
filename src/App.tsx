@@ -16,7 +16,7 @@ const myNum: number = 27
 
 function App() {
   const [count, setCount] = useState<number>(0)
-  const [users, setUsers] = useState<User[] | null>(null)
+  const [users, /*setUsers*/] = useState<User[] | null>(null)
 
   const inputRef = useRef<HTMLInputElement>(null)
 
@@ -30,8 +30,8 @@ function App() {
     return () => console.log('unmounting')
   }, [users])
 
-  const addTwo = useCallback((e: MouseEvent<HTMLButtonElement> | 
-  KeyboardEvent<HTMLButtonElement>): void => setCount(prev => prev + 2), [])
+  const addTwo = useCallback((/* e: MouseEvent<HTMLButtonElement> | 
+  KeyboardEvent<HTMLButtonElement> */): void => setCount(prev => prev + 2), [])
 
   const result = useMemo<number>(() => fib(myNum), [myNum])
 
